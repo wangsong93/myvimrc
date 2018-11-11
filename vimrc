@@ -36,7 +36,12 @@ Plugin 'gmarik/Vundle.vim'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 " 这个Toggle是什么意思
-nmap <F5> :NERDTreeToggle<CR> 
+nmap <F5> :NERDTreeFind<CR>
+nmap <F6> :NERDTreeToggle<CR> 
+
+"nn <silent><F5> :exec("NERDTreeToggle ".expand('%:h'))<CR> 
+"可打开当前文件所在的目录 貌似有点问题
+
 "nnoremap <leader>ne :NERDTree<CR>
 
 Plugin 'git@github.com:spf13/spf13-vim.git'
@@ -207,7 +212,7 @@ set showmatch " show matching {}/()
 
 " set cursor line and column
 "光标显示列线和行线
-"set cursorline
+set cursorline
 set cursorcolumn
 
 
@@ -290,7 +295,7 @@ set pastetoggle=<F9>
 
 "let g:go_version_warning = 0
 let g:godef_split = 0
-let g:tagbar_width = 50
+let g:tagbar_width = 60
 
 set number
 filetype on
@@ -316,9 +321,11 @@ set ruler
 "set autochdir
 set incsearch
 "set showcmd
-set ignorecase smartcase
+"set ignorecase smartcase
 set cmdheight=2
 "set linebreak
 highlight search ctermbg=yellow ctermfg=black
 "highlight matchparen cterm=underline ctermbg=none ctermfg=none
 set history=1000
+"set iskeyword=a-z,A-Z,48-57
+set viminfo='1000 "复制的行数不做限制
